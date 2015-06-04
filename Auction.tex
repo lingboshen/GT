@@ -25,7 +25,58 @@ $$p = \frac{b_{1}+b_{2}}{2}$$
 	\item   ( 5 points) Assume that, in contrast to the situation above, the buyers (but not the seller) know each other's values. For given $(v_{1} v_{2})$, determine a Nash equilibrium. Calculate the seller's expected revenue when this equilibrium is played. (Hint: use the tie-breaking rule that, if $v_{i}>v_{j}$ and bidders make the same bid, the object is allocated to player i, that is, the player with the highest value.)
 \end{enumerate}
 
+\section*{Fair Division--2014R}Two players jointly own an object. (For example, think about the case where they have acquired it through inheritance). They wish to allocate it to the one who values it most while simultaneously rewarding the other player fairly. Let $v_{i}$ be the value of player $i$; assume that values are drawn independently from the uniform distribution on $[0,1]$ and that each player is privately informed about his own value.
+The players agree to use the following procedure. They bid simultaneously; the highest bidder wins and gets the object, and he pays $1/2$ of the average of the two bids to the other player. Hence, the payoff function of player 1 is
+\begin{eqnarray*}
+u_{1}(b_{1},b_{2};v_{1},v_{2})&=&\begin{cases}
+v_{1}-\frac{b_{1}+b_{2}}{4}	&\text{if $b_{1}>b_{2}$}\\
+\frac{b_{1}+b_{2}}{4}	&\text{if $b_{1}<b_{2}$}
+\end{cases}
+\end{eqnarray*}(and symmetrically for player 2)\begin{enumerate}
+	\item (5 points). What is the best reply of player 1 if player 2 always bids his value, that is, if player 2 uses the strategy $b_{2}(v_{2})=v_{2}$ for all $v_{2}$?	\item (10 points). Determine a symmetric Bayesian Nash Equilibrium (BNE) of the game. [Hint: The Differential Equation allows a solution of the form $b(v)=\alpha+\beta v$]
+\end{enumerate}Now consider a different interpretation. The object has the same value $v$ to each player and $v=\frac{v_{1}+v_{2}}{2}$. In other words, each player receives a signal on the common value, and the signals are independent. The players use the same procedure as before. In this case we have\begin{eqnarray*}
+u_{1}(b_{1},b_{2};v_{1},v_{2})&=&\begin{cases}
+\frac{v_{1}+v_{2}}{2}-\frac{b_{1}+b_{2}}{4}	&\text{if $b_{1}>b_{2}$}\\
+\frac{b_{1}+b_{2}}{4}	&\text{if $b_{1}<b_{2}$}
+\end{cases}
+\end{eqnarray*}(and symmetrically for player 2)
+\begin{enumerate}
+	\item [3.] (5 points). Consider a symmetric BNE. Assume player 1 has signal $v_{1}$ and learns that he wins the auction. What expected value does player 1 assign to the object at this stage?	\item [4.] (5 points). Determine a symmetric BNE.
+\end{enumerate}
 
+\section*{War of Attrition--2013}
+Consider the following 2-person Bayesian game. Player $i$ ($i = 1,2$) values an indivisible object at $v_i$; each player knows his own value, but considers the value of his opponent to be an (independent) draw from the uniform distribution on $[0,1]$. The players simultaneously bid non-negative amounts for the object, the highest bidder wins, and each bidder pays the
+minimum of the two bids. Hence, the payoff function of player 1 is:
+\begin{eqnarray*}
+u_{1}	&=&	\begin{cases}
+v_{1}-b{2}    &    \text{if $b_{1}>b_{2}$}    \\
+-b{1}        &    \text{if $b_{1}<b_{2}$}    \\
+v_{1}/2-b_{1}    &\text{if $b_{1}=b_{2}$}
+\end{cases}
+\end{eqnarray*}
+
+with the payoff function of player 2 being defined similarly.
+\begin{enumerate}
+	\item Show that there exist numbers $n_{1}$ and $n_{2}$ with $n_{1}>n_{2}$ such that the following (constant) strategies form an asymmetric Bayesian Nash Equilibrium (BNE):
+\begin{eqnarray*}
+b_{1}(v_{1})    &=&n_{1} \ \ \text{for all $v_{1}\in[0,1]$}    \\
+b_{2}(v_{2})    &=&n_{2} \ \ \text{for all $v_{2}\in[0,1]$} 
+\end{eqnarray*}
+	\item Show that there does not exist a symmetric linear BNE, i.e., there does not exist $a\ge 0$ such that each player bidding $b_{i}(v_{i}) = av_{i}$ for all $v_{i} \in [0, 1]$ is a BNE. 
+	\item  Derive a symmetric BNE. (10 points: You get 5 points if you are able to write down the correct differential equation; if you are able to solve that equation to get the BNE explicitly you get an additional 5 points.)
+\end{enumerate}
+
+\section*{Problem 3--2012}2 bidders are interested in a certain object. $B_{i}$ values the object at $v_{i}\ge 0$. Each buyer knows his own value, but he considers the value of the other bidder to be drawn from the uniform distribution on $[0,1]$. The seller does not value the object himself; he considers $v_1$ and $v_2$ to be independently drawn from the uniform distribution on $[0,1]$.
+\begin{enumerate}
+	\item Suppose that bidder 1 bids first and bidder 2 second, with bidder 2 knowing the bid of bidder 1. The seller allocates the object to the highest bidder, who has to pay his bid. What will $B_1$ bid, and what is the expected utility of each bidder?	\item Suppose the seller instead uses an all pay auction: simultaneously $B_1$and $B_2$ bid, the highest bidder wins the object, and each player (both the winner and the loser) has to pay his bid to the seller. Calculate a Bayesian Nash equilibrium of this game.	\item What is the seller's expected revenue when the bidders play the Bayesian Nash equilibrium from 2?￼￼￼￼	\item Explain that you can actually calculate the expected revenue from 3 without explicitly knowing the answer to question 2. Does the all pay auction raise higher or lower expected revenue than a usual auction, in which only the winner pays?
+\end{enumerate}
+
+\section*{Problem 3 An auction--2012R}A seller has two identical objects for sale. There are three buyers. Each of them is interested in acquiring at most one item. Bidder i's value for the item is $v_i$: Each bidder knows his own value, but not those of his opponents. The seller does not know any of the values; he considers them to be independently drawn from the uniform distribution on $[0,1]$. Consistent with this, each bidder $i$ considers the values $v_j$ and $v_k$ of his competitors to be independent draws from the uniform distribution on $[0,1]$ as well. Players are risk neutral.
+For answering the questions below, it is convenient to know the following.
+Let $M = \max(v_{2},v_{3})$, and $m = \min (v_{2},v_{3})$, then for $y\leq z$, $\Pr[m\leq y,M\leq z]=2yz-y^{2}$. (If $y>z$, this probability is $z^2$).) Note that it follows that $\Pr[m \leq y] = 2y - y^{2}$
+\begin{enumerate}
+	\item (5 points) Assume that the seller uses an English (that is, ascending) auction without a reserve price. The auction stops when the first bidder drops out; the two remaining bidders each win an object at that price. What is an optimal strategy for each bidder and what will be the expected revenue of the seller?	\item (10 points) Suppose that the seller uses a sealed bid, third price auction: the two highest bidders each get an object and they pay the bid of the losing (that is: lowest) bidder. Show that it is a weak dominant strategy to bid your value. What is the seller’s expected revenue?	\item (10 points) Suppose that the seller uses a sealed bid ``pay as bid" auction, that is, the two highest bidders each win an object and each pays the price of his bid. Derive a Bayesian Nash equilibrium (or show how that can be derived) and calculate the seller's expected revenue.
+\end{enumerate}
 \end{document}
 
 
