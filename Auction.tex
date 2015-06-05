@@ -8,6 +8,8 @@
 \usepackage{xcolor}
 \usepackage{eurosym}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{framed}
 \begin{document}
 \begin{center}
 \LARGE{Microeconomics II--Auction}
@@ -43,6 +45,54 @@ u_{1}(b_{1},b_{2};v_{1},v_{2})&=&\begin{cases}
 \begin{enumerate}
 	\item [3.] (5 points). Consider a symmetric BNE. Assume player 1 has signal $v_{1}$ and learns that he wins the auction. What expected value does player 1 assign to the object at this stage?	\item [4.] (5 points). Determine a symmetric BNE.
 \end{enumerate}
+
+\begin{framed}
+Solution:
+
+\begin{enumerate}
+	\item If $P_1$ has value $v_{1}$ and bids $b$, then if $P_2$ bids truthfully, the expected payoff of $P_1$ is 
+		\begin{eqnarray*}
+			\mathbb{E}u_{1}(b,v_{2};v_{1},v_{2})	&=&		\int _{0}^{1}u_{1}(b,v_{2};v_{1},v_{2})dv_{2}	\\
+			&=&\int_{0}^{b}\left(v_{1}-\frac{b+v_{2}}{4}\right)dv_{2} + \int_{b}^{1}\frac{b+v_{2}}{4}dv_{2}		\\
+			&=&-\frac{3}{4}b^{2}+bv_{1}+\frac{b}{4}+\frac{1}{8}
+		\end{eqnarray*}
+F.O.C. is 	
+		\begin{eqnarray*}
+		-\frac{3}{2}b+v_{1}+\frac{1}{4}	&=&		0	
+		\end{eqnarray*}
+which yields $b(v_{1})=\frac{2}{3}v_{1}+\frac{1}{6}$
+
+	\item $\forall v_{1}$, $s(v_{1})$ should be best response to $s(\cdot)$, hence,
+		\begin{eqnarray*}
+			s(v_{1})	&\in& 	\arg\max_{b}\mathbb{E}u_{1}(b,s(v_{2});v_{2})	\\
+					&\Leftrightarrow&		\\
+			v_{1}	&\in&	\arg\max_{x}\mathbb{E}u_{1}(s(x),s(v_{2});v_{2})
+		\end{eqnarray*}
+The expected utility for bidder 1 is 
+		\begin{eqnarray*}
+			\mathbb{E}u_{1}(s(x),s(v_{2});v_{2})	&=&		\int _{0}^{1}u_{1}(s(x),s(v_{2});v_{2})dv_{2}	\\
+			&=&\int_{0}^{x}\left(v_{1}-\frac{s(x)+s(v_{2})}{4}\right)dv_{2} + \int_{x}^{1}\frac{s(x)+s(v_{2})}{4}dv_{2}		\\
+			&=&v_{1}x-\frac{s(x)x}{2}+\frac{s(x)}{4}-\int_{0}^{x}\frac{s(v_{2})}{4}dv_{2}+\int_{x}^{1}\frac{s(v_{2})}{4}dv_{2}
+		\end{eqnarray*}
+F.O.C. is 
+		\begin{eqnarray*}
+		v_{1}-\frac{s'(x)x}{2}-\frac{s(x)}{2}+\frac{s'(x)}{4}-\frac{s(x)}{4}-\frac{s(x)}{4}	&=&		0	\\
+		2xs'(x)-s'(x)+4s(x)-4v_{1}		&=&		0	
+		\end{eqnarray*}
+This equation should be satisfied for $x=v_{1}$, i.e. $2v_{1}s'(v_{1})-s'(v_{1})+4s(v_{1})-4v_{1}=0$
+We guess the solution for this ODE has the form $s(v_{1})=\alpha+\beta v_{1}$, which means 
+		\begin{eqnarray*}
+		2v_{1}\beta-\beta+4\left(\alpha+\beta v_{1}\right)-4v_{1}		&=&		0	\\
+		v_{1}(6\beta-4)-\beta+4\alpha	&=&		0	
+		\end{eqnarray*}
+which yields, 
+		\begin{eqnarray*}
+		\beta	&=&		\frac{2}{3}	\\
+		\alpha	&=&		\frac{1}{6}
+		\end{eqnarray*}
+The equilibrium strategy is $s(v)=\frac{2}{3}v+\frac{1}{6}$
+\end{enumerate}
+\end{framed}
 
 \section*{War of Attrition--2013}
 Consider the following 2-person Bayesian game. Player $i$ ($i = 1,2$) values an indivisible object at $v_i$; each player knows his own value, but considers the value of his opponent to be an (independent) draw from the uniform distribution on $[0,1]$. The players simultaneously bid non-negative amounts for the object, the highest bidder wins, and each bidder pays the
